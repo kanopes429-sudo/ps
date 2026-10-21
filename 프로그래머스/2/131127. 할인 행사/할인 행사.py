@@ -4,15 +4,12 @@ def solution(want, number, discount):
     # wanna ={}
     # for i in range(len(want)):
     #   wanna[want[i]] = number[i]
-    for i in range(len(discount)-10+1):
+    for i in range(len(discount)-9):
         ten_days = discount[i : i+10]   # 그날부터 10일
         
-        ok = True
         for item in wanna:
             if ten_days.count(item) < wanna[item]:
-                ok = False
-                
-        if ok:
-            answer += 1
+                break
+        else: answer += 1
             
     return answer
